@@ -1,9 +1,3 @@
-
-<?php 
-    include __DIR__ . '/db/database.php'
-    ; ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +7,36 @@
     <title>Document</title>
 </head>
 <body>
+
+    <?php 
+    include_once __DIR__ . '/db/database.php'
+    ; ?>
+    
+    <h1>
+    <?php 
+        //var_dump($stampa);
+
+        foreach($stampa as $valore) {
+            foreach($valore as $valoretto) {
+                ?>
+                    <img src="
+                        <?php echo ($valoretto['poster']);?>
+                    " alt="Record image">
+
+                    <h6>
+                        <?php echo ($valoretto['title']);?>
+                    </h6>
+                    <h6>
+                        <?php echo ($valoretto['author']);?>
+                    </h6>
+                    <h6>
+                        <?php echo ($valoretto['year']);?>
+                    </h6>
+                <?php  
+            }
+        }
+    ?>
+    </h1>
     
     
 
