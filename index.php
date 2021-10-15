@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,31 +16,46 @@
     include_once __DIR__ . '/db/database.php'
     ; ?>
     
-    <h1>
-    <?php 
-        //var_dump($stampa);
+    <div class="container">
+        <div class="row">
+            
+                <?php 
+                //var_dump($stampa);
 
-        foreach($stampa as $valore) {
-            foreach($valore as $valoretto) {
+                foreach($stampa as $valore) {
+                    foreach($valore as $valoretto) {
+                        ?>
+                        <div class="col-2 m-3">
+                            <div class="album_box text-center">
+
+                            <img class="m-3" src="
+                                <?php echo ($valoretto['poster']);?>
+                            " alt="Record image">
+
+                            <h4>
+                                <?php echo ($valoretto['title']);?>
+                            </h4>
+
+                            <p>
+                                <?php echo ($valoretto['author']);?>
+                            </p>
+
+                            <p>
+                                <?php echo ($valoretto['year']);?>
+                            </p>
+
+
+                            </div>
+                        </div>
+                        <?php  
+                    }
+                }
                 ?>
-                    <img src="
-                        <?php echo ($valoretto['poster']);?>
-                    " alt="Record image">
-
-                    <h6>
-                        <?php echo ($valoretto['title']);?>
-                    </h6>
-                    <h6>
-                        <?php echo ($valoretto['author']);?>
-                    </h6>
-                    <h6>
-                        <?php echo ($valoretto['year']);?>
-                    </h6>
-                <?php  
-            }
-        }
-    ?>
-    </h1>
+            
+        </div>
+    </div>
+    
+   
     
     
 
