@@ -19,39 +19,43 @@
     <div class="container">
         <div class="row">
 
-            
+
+
                 <?php 
                 //var_dump($stampa);
 
-                foreach ($stampa as $disco) {
-                    foreach ($disco as $valoreDisco) {
+                foreach ($stampa['response'] as $disco) {
+                   
                         ?>
                         <div class="col-2 m-3">
                             <div class="album_box text-center">
 
                             <img class="m-3" src="
-                                <?php echo ($valoreDisco["poster"]);?>
+                                <?php echo ($disco["poster"]);?>
                             " alt="Record image">
 
                             <h4>
-                                <?php echo ($valoreDisco["title"]);?>
+                                <?php echo ($disco["title"]);?>
                             </h4>
 
                             <p>
-                                <?php echo ($valoreDisco["author"]);?>
+                                <?php echo ($disco["author"]);?>
                             </p>
 
                             <p>
-                                <?php echo ($valoreDisco["year"]);?>
+                                <?php echo ($disco["year"]);?>
                             </p>
 
                             
                             
 
                             </div>
+
+                            
+                            
                         </div>
                         <?php  
-                    }
+              
                 }
                 ?>
             
